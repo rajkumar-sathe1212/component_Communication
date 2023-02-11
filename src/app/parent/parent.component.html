@@ -1,0 +1,71 @@
+<h2>Students Data parent !</h2>
+
+<div class="row">
+
+  <div class="col-lg-5 text-center mt-5">
+
+    <table class="table table-bordered">
+
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Buttons</th>
+      </tr>
+
+      <tr *ngFor="let l of list,let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{l.name}}</td>
+        <td>{{l.age}}</td>
+        <td>
+          <button (click)="remove(l)">X</button>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div class="col-lg-2"></div>
+
+  <div class="col-lg-5">
+    <app-child></app-child>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-lg-1">
+      <div>
+        <button class="btn btn-outline-primary" (click)="increase()">👍</button>
+        <h4> <span> {{count}} </span> Likes</h4>
+      </div>
+    </div>
+
+
+    <div class="col-lg-11">
+      <div>
+
+        <input [(ngModel)]="inputName" class="form-control" placeholder="Enter your Comments" />
+
+        <button class="btn btn-outline-success mt-3" type="submit" (click)="submit()">Send</button>
+
+
+        <h4><span>{{commentCount}} Comment</span> </h4>
+
+      </div>
+
+
+
+
+      <table>
+        <tr>
+          <th></th>
+        </tr>
+        <tr *ngFor="let c of comments">
+          <td>{{c}}</td>
+        </tr>
+      </table>
+
+    </div>
+
+  </div>
+</div>
+
